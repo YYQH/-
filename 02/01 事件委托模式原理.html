@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="container"><button id="btn">按钮</button></div>
+	<ul>
+		<li>1 1 1</li>
+		<li>2 2 2</li>
+		<p>123</p>
+		<li>3 3 3</li>
+		<p>123</p>
+		<li>4 4 4</li>
+		<li>5 5 5</li>
+		<p>123</p>
+		<li>6 6 6</li>
+		<li>7 7 7</li>
+		<p>123</p>
+		<p>123</p>
+		<li>8 8 8</li>
+		<li>9 9 9</li>
+		<li>10 10 10</li>
+	</ul>
+<script type="text/javascript">
+// var btn = document.getElementById('btn');
+// btn.onclick = function() {
+// 	container.innerHTML = '触发元素了'
+// 	// 为了回收内容
+// 	btn.onclick = null;
+// }
+// 事件委托，解决内存外泄问题
+container.onclick = function(e) {
+	// 点击了按钮
+	if (e.target.id === 'btn') {
+		// 更新内容
+		container.innerHTML = '删除了按钮'
+	}
+}
+// 点击li，将背景变成绿色
+// 获取li
+// var lis = document.getElementsByTagName('li');
+// // 为每一个li绑定事件
+// for (var i = 0, len = lis.length; i < len; i++) {
+// 	// 绑定事件
+// 	lis[i].onclick = function(e) {
+// 		e.target.style.background = 'green'
+// 	}
+// }
+
+
+// 事件委托模式 1 减少事件数量
+// var ul = document.getElementsByTagName('ul')[0];
+// // 绑定事件
+// ul.onclick = function(e) {
+// 	// 根据元素名称找到li
+// 	if (e.target.tagName.toUpperCase() === 'LI') {
+// 		// 改变背景
+// 		e.target.style.background = 'green'
+// 	}
+// 	// console.log(e.target.tagName)
+// } 
+// 2 预言未来元素
+// 未来某一点新增一个li
+// setTimeout(function() {
+// 	// 创建li
+// 	var li = document.createElement('li');
+// 	// 设置内容
+// 	li.innerHTML = 'hello';
+// 	// 插入到页面中
+// 	document.getElementsByTagName('ul')[0].appendChild(li)
+// }, 1000)
+</script>
+</body>
+</html>

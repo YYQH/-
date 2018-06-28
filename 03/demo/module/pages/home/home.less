@@ -1,0 +1,79 @@
+// 引入配置文件
+@import url(../../base.less);
+.app-home {
+	.banner {
+		background: @color;
+		color: #fff;
+		padding: 80px 0 100px;
+		text-align: center;
+		.logo {
+			@w: 140px;
+			.wcenter(@w);
+			.hlh(@w);
+			font-size: 120px;
+			border: 1px solid #fff;
+			border-radius: 20px;
+		}
+		h1 {
+			.wcenter(800px, 30px, 50px);
+			font-size: 28px;
+			line-height: 40px;
+		}
+		.btn {
+			.ui-btn(#fff, @color);
+		}
+		p {
+			margin-top: 30px;
+			font-size: 12px;
+			color: lighten(@color, 30%);
+		}
+	}
+	.first-list {
+		padding: 100px 0 80px;
+		text-align: center;
+		border-bottom: 1px solid #efeffe;
+		h2 {
+			font-size: 36px;
+		}
+		p {
+			.wcenter(880px, 20px);
+			font-size: 20px;
+			line-height: 32px;
+		}
+		ul {
+			.clearfix();
+		}
+		ul li {
+			list-style: none;
+			width: 100%/3;
+			float: left;
+			img {
+				width: 80%;
+			}
+			p {
+				font-size: 16px;
+				line-height: 24px;
+				width: 98%;
+			}
+		}
+		.line {
+			.wcenter(100px, 50px);
+			border-bottom: 1px solid #efefef;
+		}
+		.btn {
+			.ui-btn(@color, #fff);
+		}
+	}
+	// 第二个列表要复用第一个列表的样式
+	.second-list {
+		.first-list;
+		// 重写样式要注意权重
+		ul li {
+			width: 100%/4;
+			padding: 0 1px;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}

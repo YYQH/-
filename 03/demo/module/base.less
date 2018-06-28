@@ -1,0 +1,31 @@
+// 页面主色调
+@color: #5b4282;
+// 定义一些方法，复用功能
+.wcenter(@w: auto, @mt: 0, @mb: @mt) {
+	width: @w;
+	margin: @mt auto @mb;
+}
+// 字体垂直居中
+.hlh(@h) {
+	height: @h;
+	line-height: @h;
+}
+.clearfix() {
+	&:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+}
+// 定义按钮样式
+.ui-btn(@color, @bg) {
+	padding: 15px 50px;
+	border: 1px solid @color;
+	color: @color;
+	background: @bg;
+	&:hover {
+		background: @color;
+		color: @bg;
+		border-color: @bg;
+	}
+}

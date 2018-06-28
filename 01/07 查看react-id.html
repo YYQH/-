@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<div id="app"></div>
+	<script type="text/javascript" src="lib/react.js"></script>
+	<script type="text/javascript" src="lib/react-dom.js"></script>
+	<script type="text/x-jsx">
+		// es5语法创建组件
+		var Nav = React.createClass({
+			createList: function() {
+				// 根据map方法，将data数据映射成虚拟DOM数组
+				return this.props.data.map(function(item, index) {
+					// 返回虚拟DOM
+					return <li key={index}>{item + '111'}</li>
+				})
+			},
+			render: function() {
+				return <ul>{this.createList()}</ul>
+			}
+		})
+		ReactDOM.render(<Nav data={['red', 'blue', 'green']}></Nav>, app)
+	</script>
+</body>
+</html>

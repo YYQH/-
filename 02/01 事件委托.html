@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<button onclick="console.log(123)">111</button>
+	<div id="app"></div>
+<script type="text/javascript" src="lib/react.js"></script>
+<script type="text/javascript" src="lib/react-dom.js"></script>
+<!-- 2 引入编译库 -->
+<script type="text/javascript" src="lib/browser.js"></script>
+<!-- 1 更改类型 -->
+<script type="text/babel">
+var Demo = React.createClass({
+	clickBtn(e, oe) {
+		console.log(this, arguments, e.target, e.currentTarget)
+		console.log(oe.target, oe.currentTarget)
+	},
+	render() {
+		return (
+			<div>
+				<button onClick={this.clickBtn}>按钮</button>
+			</div>
+		)
+	}
+})
+//渲染
+ReactDOM.render(<Demo></Demo>, app)
+</script>
+</body>
+</html>

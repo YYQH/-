@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+function Player () {
+	this.color = 'red';
+}
+Player.prototype.getColor = function() {
+	return this.color;
+}
+// 原型属性
+Player.prototype.num = 100;
+// 静态属性和静态方法
+Player.teacher = 'Mr Zhang';
+Player.getTeacher = function() {
+	console.log(this.teacher)
+}
+// 实例化
+// var p = new Player();
+// console.log(p)
+// // 遍历
+// for (var i in p) {
+// 	console.log(i, p[i])
+// }
+// // 静态的通过类来访问
+// console.log(111, Player.teacher)
+// Player.getTeacher()
+// // 实例化时候。忘记使用new
+// var p2 = Player();
+// console.log(p2)
+
+
+// 原子继承：继承对象
+var p = new Player();
+// var demo = Object.create(p);
+function create(obj) {
+	// 定义继承类
+	function F() {}
+	// 让f继承obj
+	F.prototype = obj;
+	// 返回继承类实例化对象
+	return new F()
+	// 返回类: 寄生工厂模式
+	// return F;
+}
+var demo = create(p);
+demo.abc = 'hello'
+console.log(demo)
+</script>
+</body>
+</html>
