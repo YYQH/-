@@ -1,0 +1,23 @@
+@import url(../../base.less);
+
+.app-slider {
+	float: right;
+	width: 300px;
+	padding-top: 80px;
+	li {
+		.hlh(30px);
+		border-left: 3px solid transparent;
+		list-style: none;
+		padding-left: 30px;
+		a {
+			color: #666;
+		}
+		&:hover {
+			border-left-color: @color;
+			a {
+				color: @color;
+				text-decoration: none;
+			}
+		}
+	}
+}

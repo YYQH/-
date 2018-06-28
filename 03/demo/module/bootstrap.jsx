@@ -5,4 +5,4 @@ import { render } from 'react-dom';
 import App from './app/app.jsx';
 
 // 渲染应用程序
-render(<App page="home"></App>, document.getElementById('app'))
+render(<App page="start"></App>, document.getElementById('app'))

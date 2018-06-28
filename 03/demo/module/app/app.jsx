@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Header from "../components/header/header.jsx"
 // 引入页面组件
 import Home from '../pages/home/home.jsx';
+import Start from '../pages/start/start.jsx';
 import './app.less';
 // console.log(PropTypes)
 
@@ -66,7 +67,7 @@ export default class App extends Component {
 				{/*子组件向父组件通信，父组件向子组件通信*/}
 				<Header page={this.getChoosePage()} method={this.togglePage.bind(this)}></Header>
 				<Home style={home}>首页</Home>
-				<h1 style={{display: start}}>起步</h1>
+				<Start style={start}>起步</Start>
 				<h1 style={{display: css}}>全局 CSS 样式</h1>
 				<h1 style={{display: component}}>组件</h1>
 				<h1 style={{display: js}}>JavaScript 插件</h1>
