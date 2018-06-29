@@ -139,6 +139,7 @@ var ShowChild = function (_Component) {
 		// 	}
 		// }
 		value: function render() {
+			console.log(this.props, 123);
 			return _react2.default.createElement(
 				'div',
 				null,

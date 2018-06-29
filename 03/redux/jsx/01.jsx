@@ -38,6 +38,7 @@ class ShowChild extends Component {
 	// 	}
 	// }
 	render() {
+		console.log(this.props, 123)
 		return (
 			<div>
 				<h1>{'show： ' + this.props.state}</h1>
