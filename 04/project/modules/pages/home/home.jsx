@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// 引入Link
+import { Link } from 'react-router-dom';
 // 引入请求库
 import axios from 'axios';
 import './home.less'
@@ -18,14 +20,18 @@ export default class Home extends Component {
 		return this.state.data.map((item, index) => {
 			return (
 				<li key={index}>
-					<img src={item.img} alt=""/>
-					<div className="content">
-						<h3>{item.title}</h3>
-						<p>
-							<span>{item.content}</span>
-							<span className="home-comments">{'评论:' + item.comment}</span>
-						</p>
-					</div>
+					{/*<a className="home-list-container" href={'#/detail/' + item.id}></a>*/}
+					{/*Link不能携带#*/}
+					<Link className="home-list-container" to={'/detail/' + item.id}>
+						<img src={item.img} alt=""/>
+						<div className="content">
+							<h3>{item.title}</h3>
+							<p>
+								<span>{item.content}</span>
+								<span className="home-comments">{'评论:' + item.comment}</span>
+							</p>
+						</div>
+					</Link>
 				</li>
 			)
 		})
