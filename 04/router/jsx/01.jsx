@@ -1,7 +1,7 @@
 // 引入库
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Switch, Route, HashRouter, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, HashRouter, Link, Redirect, BrowserRouter } from 'react-router-dom';
 
 // 定义组件
 class App extends Component {
@@ -63,9 +63,9 @@ class Detail extends Component {
 
 // 第二步 定义渲染策略
 let routes = (
-	<HashRouter>
+	<BrowserRouter>
 		<App></App>
-	</HashRouter>
+	</BrowserRouter>
 )
 // 渲染路由规则
 render(routes, app)
