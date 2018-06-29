@@ -10,12 +10,19 @@ class App extends Component {
 		return (
 			<div>
 				<h2>应用程序组件</h2>
+				<Link to="/list/1">进入列表页</Link>
+				<br/>
+				<Link to="/detail/1">进入详情页</Link>
+				<br/>
+				<Link to="/">首页</Link>
 				{/*第一步定义路由渲染位置*/}
 				<Switch>
 					{/*列表页，页码是动态改变的*/}
 					<Route path="/list/:page" component={List}></Route>
 					{/*详情页,商品的id是可变的*/}
 					<Route path="/detail/:id" component={Detail}></Route>
+					{/*输入ickt进入列表页的第二页*/}
+					<Redirect from="/ickt" to="/list/2"></Redirect>
 					{/*默认路由，输入其他的，我们都想进入首页*/}
 					<Route path="*" component={Home}></Route>
 				</Switch>
@@ -63,9 +70,9 @@ class Detail extends Component {
 
 // 第二步 定义渲染策略
 let routes = (
-	<BrowserRouter>
+	<HashRouter>
 		<App></App>
-	</BrowserRouter>
+	</HashRouter>
 )
 // 渲染路由规则
 render(routes, app)
