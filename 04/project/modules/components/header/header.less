@@ -1,0 +1,34 @@
+@import url(../../base.less);
+
+// 定义js
+.app-header {
+	@h: 60px;
+	height: @h;
+	line-height: @h;
+	background: @color;
+	color: #fff;
+	.go-back {
+		float: left;
+		position: relative;
+	}
+	.arrow {
+		.arrow(10px, #fff, right);
+		position: absolute;
+		left: 5px;
+		top: 22px;
+		.blue {
+			border-right-color: @color;
+			top: -10px;
+			left: -8px;
+		}
+	}
+	.login {
+		float: right;
+		margin-right: 10px;
+	}
+	h1 {
+		font-size: 20px;
+		text-align: center;
+		text-indent: 1.5em;
+	}
+}

@@ -1,0 +1,9 @@
+@color: #3e86ce;
+// 定义箭头方法
+.arrow(@w: 10px, @c: #000, @dir: top) {
+	// 兼容行内和块
+	width: 0;
+	font-size: 0;
+	border: @w solid transparent;
+	border-@{dir}-color: @c;
+}
